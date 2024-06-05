@@ -4,7 +4,7 @@ import axios, {
   AxiosResponse,
   CreateAxiosDefaults,
 } from 'axios'
-import { R } from 'vite/dist/node/types.d-aGj9QkWt'
+// import { R } from 'vite/dist/node/types.d-aGj9QkWt'
 // import { ElNotification } from 'element-plus'
 
 export const useApi = (apiUrl?: string) => {

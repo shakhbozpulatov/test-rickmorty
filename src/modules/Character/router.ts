@@ -2,7 +2,7 @@ import { RouteRecordRaw } from 'vue-router'
 
 const routes: Readonly<RouteRecordRaw[]> = [
   {
-    path: '/character',
+    path: '/',
     name: 'Characters',
     component: () => import('@/modules/Character/pages/PCharacters.vue'),
     meta: {
