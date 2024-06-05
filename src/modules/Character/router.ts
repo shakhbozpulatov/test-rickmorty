@@ -10,7 +10,7 @@ const routes: Readonly<RouteRecordRaw[]> = [
     },
   },
   {
-    path: '/characters/:id',
+    path: '/character/:id',
     name: 'CharactersItem',
     component: () => import('@/modules/Character/pages/PCharactersItem.vue'),
     meta: {

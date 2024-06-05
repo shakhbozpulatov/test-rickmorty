@@ -5,7 +5,7 @@
     </div>
     <div class="bg-[#3b3e43] p-3 text-white w-[60%] flex flex-col gap-3">
       <div>
-        <router-link :to="`/character`">
+        <router-link :to="`/character/${props.character.id}`">
           <p class="text-2xl hover:text-[#fb9603]">
             {{ props.character.name }}
           </p>

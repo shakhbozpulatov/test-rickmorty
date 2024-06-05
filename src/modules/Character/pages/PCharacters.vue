@@ -27,20 +27,19 @@
       />
     </el-select>
     <el-button size="large" type="primary" @click="filterBtn">Submit</el-button>
-    <el-button size="large" type="primary" class="!ml-0" @click="resetBtn"
+    <el-button size="large" type="danger" plain class="!ml-0" @click="resetBtn"
       >Reset</el-button
     >
   </div>
-  <div
-    v-if="characters"
-    class="py-[20px] grid md:grid-cols-2 grid-cols-1 gap-3"
-  >
-    <CCardCharacter
-      v-for="(character, index) in characters?.results"
-      :key="index"
-      :character="character"
-      class="w-full h-[220px]"
-    />
+  <div v-if="characters">
+    <div class="py-[20px] grid md:grid-cols-2 grid-cols-1 gap-3">
+      <CCardCharacter
+        v-for="(character, index) in characters?.results"
+        :key="index"
+        :character="character"
+        class="w-full h-[220px]"
+      />
+    </div>
     <el-pagination
       class="flex items-center justify-end my-4"
       background
@@ -50,6 +49,7 @@
       @change="paginBtn"
     />
   </div>
+
   <div class="my-5" v-else>
     <el-alert
       :closable="false"
