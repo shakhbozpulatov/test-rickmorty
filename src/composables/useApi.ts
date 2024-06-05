@@ -4,9 +4,22 @@ import axios, {
   AxiosResponse,
   CreateAxiosDefaults,
 } from 'axios'
+import { R } from 'vite/dist/node/types.d-aGj9QkWt'
+// import { ElNotification } from 'element-plus'
 
 export const useApi = (apiUrl?: string) => {
   const baseURL = apiUrl || import.meta.env.VITE_APP_SERVER_URL
+
+  // function handleErrors(errors) {
+  //   if (errors.error) {
+  //     ElNotification({
+  //       title: 'Error',
+  //       message: errors.error,
+  //       type: 'error',
+  //     })
+  //     // toast.error(errors?.message)
+  //   }
+  // }
 
   const $service = (config?: CreateAxiosDefaults): AxiosInstance => {
     const headers = {
@@ -19,6 +32,13 @@ export const useApi = (apiUrl?: string) => {
       headers,
     })
     // Use interceptors here
+    _axios.interceptors.response.use(
+      (response) => response,
+      async (error) => {
+        // handleErrors(error.response.data)
+        throw error
+      },
+    )
     return _axios
   }
 
