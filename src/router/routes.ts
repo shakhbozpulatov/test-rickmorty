@@ -1,14 +1,15 @@
 import { RouteRecordRaw } from 'vue-router'
 
-export default [
+import CharacterRoutes from '@/modules/Character/router'
+import LocationRoutes from '@/modules/Locations/router'
+
+const routes: Readonly<RouteRecordRaw[]> = [
   {
     path: '/',
-    name: 'Index',
-    component: () => import('@/pages/Index.vue'),
+    redirect: '/characters',
+    component: () => import('@/layouts/Default/PDefault.vue'),
+    children: [...CharacterRoutes, ...LocationRoutes],
   },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('@/pages/About.vue'),
-  },
-] as RouteRecordRaw[]
+]
+
+export default routes

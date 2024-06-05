@@ -11,7 +11,7 @@ export const useApi = (apiUrl?: string) => {
   const $service = (config?: CreateAxiosDefaults): AxiosInstance => {
     const headers = {
       ...config?.headers,
-      // Default headers
+      // layouts headers
     }
     const _axios = axios.create({
       ...config,

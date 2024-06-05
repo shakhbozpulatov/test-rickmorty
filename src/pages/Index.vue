@@ -1,9 +1,6 @@
 <template>
   <div>
-    <h1>HOME PAGE</h1>
-    <button @click="store.count++">Increment {{ store.getCount }}</button>
-    <button @click="fetchData">Fetch data</button>
-    <pre v-if="todoData">{{ todoData }}</pre>
+    <h1 class="text-2xl font-semibold underline">Tailwind</h1>
   </div>
 </template>
 
