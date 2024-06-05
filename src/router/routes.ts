@@ -6,7 +6,7 @@ import LocationRoutes from '@/modules/Locations/router'
 const routes: Readonly<RouteRecordRaw[]> = [
   {
     path: '/',
-    redirect: '/characters',
+    redirect: '/character',
     component: () => import('@/layouts/Default/PDefault.vue'),
     children: [...CharacterRoutes, ...LocationRoutes],
   },
